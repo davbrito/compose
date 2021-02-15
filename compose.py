@@ -155,11 +155,13 @@ def main():
     print('Esta operación resultará en el siguiente arbol de archivos:\n',
           f'{base_path / component_name}{os.path.sep}')
 
-    for i, filename in enumerate(templates):
-        print('    ',
-              '\\' if i + 1 == len(templates) else '|',
-              f'---- {filename}',
-              sep='')
+    def print_tree(filenames):
+        *filenames, last_filename= filenames
+        for filename in filenames:
+            print(f'    |---- {filename}')
+        print(f'    \\---- {last_filename}')
+
+    print_tree(templates.keys())
 
     print('Si alguno de estos archivos ya existe, serán sobreescritos.')
 
