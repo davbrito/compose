@@ -37,6 +37,7 @@ export default {name}
 SIMPLE_INDEX = """\
 import React from 'react'
 import PropTypes from 'prop-types'
+import styles from './styles.module.css'
 
 const {name} = (props) => (
   <></>
@@ -51,7 +52,7 @@ export default {name}
 
 VIEW = """\
 import React from 'react'
-import styles from 'styles.module.css'
+import styles from './styles.module.css'
 
 const View = (props) => (
   <>
